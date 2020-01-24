@@ -1,4 +1,8 @@
-﻿using Microsoft.Owin;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin;
+using Model;
+using Model.Identity;
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(AplikacjeInternetoweProject.Startup))]

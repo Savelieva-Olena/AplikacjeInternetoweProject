@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using AplikacjeInternetoweProject.Models;
+using Model.Identity;
+using Model;
 
 namespace AplikacjeInternetoweProject
 {
@@ -42,7 +44,7 @@ namespace AplikacjeInternetoweProject
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context) 
         {
-            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<ApplicationDbContext>()));
+            var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(context.Get<AppDbContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
@@ -104,6 +106,16 @@ namespace AplikacjeInternetoweProject
         public static ApplicationSignInManager Create(IdentityFactoryOptions<ApplicationSignInManager> options, IOwinContext context)
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
+        }
+    }
+
+    public class ApplicationRoleManager : RoleManager<ApplicationRole>
+    {
+        public ApplicationRoleManager(IRoleStore<ApplicationRole, string> roleStore) : base(roleStore) { }
+        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> option, IOwinContext contex)
+        {
+            var applicationRoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(contex.Get<AppDbContext>()));
+            return applicationRoleManager;
         }
     }
 }
