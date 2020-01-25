@@ -8,6 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
+@using Microsoft.AspNet.Identity
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -24,7 +25,19 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Products", "Index", "Products")</li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li>
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Admin
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                @Html.ActionLink("Products", "Index", "Products", new { @class = "dropdown-item" }, null)
+                                @Html.ActionLink("Categories", "Index", "Categories", new { @class = "dropdown-item" }, null)
+                            </div>
+                        </li>
+                    }
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

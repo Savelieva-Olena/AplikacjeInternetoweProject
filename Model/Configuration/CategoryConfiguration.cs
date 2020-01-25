@@ -14,7 +14,6 @@ namespace Model.Configuration
         {
             Property(x => x.Id).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(x => x.Name).HasMaxLength(50);
-
             HasMany(x => x.Products).WithRequired(x => x.Category).HasForeignKey(x => x.CategoryId);
 
         }

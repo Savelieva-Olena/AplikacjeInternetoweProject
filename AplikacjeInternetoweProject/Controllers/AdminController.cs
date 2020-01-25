@@ -15,14 +15,5 @@ namespace AplikacjeInternetoweProject.Controllers
             return View();
         }
 
-        public ActionResult CreateUser()
-        {
-            return View();
-        }
-
-        public ActionResult AssignRole()
-        {
-            return View();
-        }
     }
 }

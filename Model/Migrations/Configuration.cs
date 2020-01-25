@@ -18,32 +18,6 @@
 
         protected override void Seed(Model.AppDbContext context)
         {
-            if (!context.Categories.Any(x => x.Name == "Elektronika"))
-            {
-                context.Categories.Add(
-                    new Entities.Category()
-                    {
-                        Name = "Elektronika"
-                    });
-                context.SaveChanges();
-            }
-
-            if (!context.Products.Any(x => x.Name == "Tablet"))
-            {
-                var categoryId = context.Categories.Where(x => x.Name == "Elektronika").Select(x => x.Id).First();
-                context.Products.Add(
-                    new Entities.Product()
-                    {
-                        Name = "Tablet",
-                        Price = 1500,
-                        CategoryId = categoryId
-
-                    });
-                context.SaveChanges();
-            }
-
-          
-
         }
     }
 }

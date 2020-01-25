@@ -13,6 +13,7 @@ using Microsoft.Owin.Security;
 using AplikacjeInternetoweProject.Models;
 using Model.Identity;
 using Model;
+using System.Web.Mvc;
 
 namespace AplikacjeInternetoweProject
 {
@@ -108,5 +109,22 @@ namespace AplikacjeInternetoweProject
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
     }
+    public class AccessDeniedAuthorizeAttribute : AuthorizeAttribute
+    {
+        public override void OnAuthorization(AuthorizationContext filterContext)
+        {
+            base.OnAuthorization(filterContext);
 
+            if (!filterContext.HttpContext.User.Identity.IsAuthenticated)
+            {
+                filterContext.Result = new RedirectResult("~/Account/Login");
+                return;
+            }
+
+            if (filterContext.Result is HttpUnauthorizedResult)
+            {
+                filterContext.Result = new RedirectResult("~/Account/Denied");
+            }
+        }
+    }
 }

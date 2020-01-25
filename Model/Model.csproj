@@ -49,6 +49,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -79,6 +80,10 @@
     <Compile Include="Migrations\202001251452416_DeleteRole.designer.cs">
       <DependentUpon>202001251452416_DeleteRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001252018490_PhotoAddMigration.cs" />
+    <Compile Include="Migrations\202001252018490_PhotoAddMigration.designer.cs">
+      <DependentUpon>202001252018490_PhotoAddMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -99,6 +104,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001251452416_DeleteRole.resx">
       <DependentUpon>202001251452416_DeleteRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001252018490_PhotoAddMigration.resx">
+      <DependentUpon>202001252018490_PhotoAddMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
