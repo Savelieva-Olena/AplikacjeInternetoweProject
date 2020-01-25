@@ -62,7 +62,6 @@
     <Compile Include="Configuration\ProductConfiguration.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Product.cs" />
-    <Compile Include="Identity\ApplicationRole.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Migrations\202001241303051_InitialMgrtion.cs" />
     <Compile Include="Migrations\202001241303051_InitialMgrtion.designer.cs">
@@ -75,6 +74,10 @@
     <Compile Include="Migrations\202001251131450_AddTableProductAnCategory.cs" />
     <Compile Include="Migrations\202001251131450_AddTableProductAnCategory.designer.cs">
       <DependentUpon>202001251131450_AddTableProductAnCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001251452416_DeleteRole.cs" />
+    <Compile Include="Migrations\202001251452416_DeleteRole.designer.cs">
+      <DependentUpon>202001251452416_DeleteRole.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001251131450_AddTableProductAnCategory.resx">
       <DependentUpon>202001251131450_AddTableProductAnCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001251452416_DeleteRole.resx">
+      <DependentUpon>202001251452416_DeleteRole.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

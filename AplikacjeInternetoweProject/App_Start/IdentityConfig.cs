@@ -109,13 +109,4 @@ namespace AplikacjeInternetoweProject
         }
     }
 
-    public class ApplicationRoleManager : RoleManager<ApplicationRole>
-    {
-        public ApplicationRoleManager(IRoleStore<ApplicationRole, string> roleStore) : base(roleStore) { }
-        public static ApplicationRoleManager Create(IdentityFactoryOptions<ApplicationRoleManager> option, IOwinContext contex)
-        {
-            var applicationRoleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(contex.Get<AppDbContext>()));
-            return applicationRoleManager;
-        }
-    }
 }

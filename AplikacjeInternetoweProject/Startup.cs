@@ -13,6 +13,51 @@ namespace AplikacjeInternetoweProject
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+            createRolesandUsers();
+        }
+
+        private void createRolesandUsers()
+        {
+            AppDbContext context = new AppDbContext();
+
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(context));
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(context));
+
+
+            // In Startup I am creating first Admin Role and creating a default Admin User   
+            if (!roleManager.RoleExists("Admin"))
+            {
+
+                // first we create Admin role   
+                var role = new IdentityRole();
+                role.Name = "Admin";
+                roleManager.Create(role);
+
+                //Here we create a Admin super user who will maintain the website                 
+
+                var user = new ApplicationUser();
+                user.UserName = "Admin@gmail.com";
+                user.Email = "Admin@gmail.com";
+
+                string userPWD = "1Admin!";
+
+                var chkUser = UserManager.Create(user, userPWD);
+
+                //Add default User to Role Admin  
+                if (chkUser.Succeeded)
+                {
+                   UserManager.AddToRole(user.Id, "Admin");
+
+                }
+            }
+            // creating Creating Employee role   
+            if (!roleManager.RoleExists("User"))
+            {
+                var role = new IdentityRole();
+                role.Name = "User";
+                roleManager.Create(role);
+
+            }
         }
     }
 }

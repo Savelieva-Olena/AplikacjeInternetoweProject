@@ -12,6 +12,7 @@ using Model.Entities;
 
 namespace AplikacjeInternetoweProject.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ProductsController : Controller
     {
         private AppDbContext db = new AppDbContext();
