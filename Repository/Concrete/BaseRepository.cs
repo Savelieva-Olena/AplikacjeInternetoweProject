@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Repository.Concrete
 {
-    class BaseRepository
+    public class BaseRepository
     {
         protected AppDbContext context;
 

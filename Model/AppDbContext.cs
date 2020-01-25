@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using Model.Configuration;
+using Model.Entities;
 using Model.Identity;
 using System;
 using System.Collections.Generic;
@@ -11,6 +13,9 @@ namespace Model
 {
     public class AppDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
         public static AppDbContext Create()
         {
             return new AppDbContext();
@@ -24,7 +29,8 @@ namespace Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            
+            modelBuilder.Configurations.Add(new ProductConfiguration());
+            modelBuilder.Configurations.Add(new CategoryConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

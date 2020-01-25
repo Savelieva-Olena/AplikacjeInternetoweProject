@@ -14,10 +14,30 @@
 
         protected override void Seed(Model.AppDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            if (!context.Categories.Any(x => x.Name == "Elektronika"))
+            {
+                context.Categories.Add(
+                    new Entities.Category()
+                    {
+                        Name = "Elektronika"
+                    });
+                context.SaveChanges();
+            }
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
+            if (!context.Products.Any(x => x.Name == "Tablet"))
+            {
+                var categoryId = context.Categories.Where(x => x.Name == "Elektronika").Select(x => x.Id).First();
+                context.Products.Add(
+                    new Entities.Product()
+                    {
+                        Name = "Tablet",
+                        Price = 1500,
+                        CategoryId = categoryId
+
+                    });
+                context.SaveChanges();
+
+            }
         }
     }
 }
