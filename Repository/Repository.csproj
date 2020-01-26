@@ -62,6 +62,7 @@
     <Compile Include="Concrete\BaseRepository.cs" />
     <Compile Include="Concrete\CategoryRepository.cs" />
     <Compile Include="Concrete\ProductRepository.cs" />
+    <Compile Include="Concrete\ShoppingCartRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

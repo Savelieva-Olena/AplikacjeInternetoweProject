@@ -70,25 +70,17 @@
     <Compile Include="Entities\OrderDetail.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
-    <Compile Include="Migrations\202001241303051_InitialMgrtion.cs" />
-    <Compile Include="Migrations\202001241303051_InitialMgrtion.designer.cs">
-      <DependentUpon>202001241303051_InitialMgrtion.cs</DependentUpon>
+    <Compile Include="Migrations\202001261559428_Test1.cs" />
+    <Compile Include="Migrations\202001261559428_Test1.designer.cs">
+      <DependentUpon>202001261559428_Test1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001241455183_RoleTable.cs" />
-    <Compile Include="Migrations\202001241455183_RoleTable.designer.cs">
-      <DependentUpon>202001241455183_RoleTable.cs</DependentUpon>
+    <Compile Include="Migrations\202001261603376_OneToIne.cs" />
+    <Compile Include="Migrations\202001261603376_OneToIne.designer.cs">
+      <DependentUpon>202001261603376_OneToIne.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202001251131450_AddTableProductAnCategory.cs" />
-    <Compile Include="Migrations\202001251131450_AddTableProductAnCategory.designer.cs">
-      <DependentUpon>202001251131450_AddTableProductAnCategory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001251452416_DeleteRole.cs" />
-    <Compile Include="Migrations\202001251452416_DeleteRole.designer.cs">
-      <DependentUpon>202001251452416_DeleteRole.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001252018490_PhotoAddMigration.cs" />
-    <Compile Include="Migrations\202001252018490_PhotoAddMigration.designer.cs">
-      <DependentUpon>202001252018490_PhotoAddMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202001261626589_OneToOne3.cs" />
+    <Compile Include="Migrations\202001261626589_OneToOne3.designer.cs">
+      <DependentUpon>202001261626589_OneToOne3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,22 +89,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001241303051_InitialMgrtion.resx">
-      <DependentUpon>202001241303051_InitialMgrtion.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001261559428_Test1.resx">
+      <DependentUpon>202001261559428_Test1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001241455183_RoleTable.resx">
-      <DependentUpon>202001241455183_RoleTable.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001261603376_OneToIne.resx">
+      <DependentUpon>202001261603376_OneToIne.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001251131450_AddTableProductAnCategory.resx">
-      <DependentUpon>202001251131450_AddTableProductAnCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001251452416_DeleteRole.resx">
-      <DependentUpon>202001251452416_DeleteRole.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001252018490_PhotoAddMigration.resx">
-      <DependentUpon>202001252018490_PhotoAddMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001261626589_OneToOne3.resx">
+      <DependentUpon>202001261626589_OneToOne3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

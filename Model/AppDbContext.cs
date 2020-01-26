@@ -20,6 +20,7 @@ namespace Model
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
 
+
         public static AppDbContext Create()
         {
             return new AppDbContext();
@@ -33,6 +34,7 @@ namespace Model
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Product>().HasOptional(x => x.OrderDetailref).WithRequired(x => x.Product);
             modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new CategoryConfiguration());
             modelBuilder.Configurations.Add(new CartConfiguration());

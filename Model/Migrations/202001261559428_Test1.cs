@@ -3,10 +3,80 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialMgrtion : DbMigration
+    public partial class Test1 : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Carts",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Count = c.Int(nullable: false),
+                        DateCreated = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Products",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(maxLength: 50),
+                        Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        PhotoPath = c.String(),
+                        Description = c.String(),
+                        CategoryId = c.Int(nullable: false),
+                        CartId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Categories", t => t.CategoryId, cascadeDelete: true)
+                .ForeignKey("dbo.Carts", t => t.CartId, cascadeDelete: true)
+                .Index(t => t.CategoryId)
+                .Index(t => t.CartId);
+            
+            CreateTable(
+                "dbo.Categories",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(maxLength: 50),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.OrderDetails",
+                c => new
+                    {
+                        OrderDetailID = c.Int(nullable: false, identity: true),
+                        Quantity = c.Int(nullable: false),
+                        UnitPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        OrderId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.OrderDetailID)
+                .ForeignKey("dbo.Orders", t => t.OrderId, cascadeDelete: true)
+                .Index(t => t.OrderId);
+            
+            CreateTable(
+                "dbo.Orders",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Username = c.String(),
+                        FirstName = c.String(),
+                        LastName = c.String(),
+                        Address = c.String(),
+                        City = c.String(),
+                        State = c.String(),
+                        PostalCode = c.String(),
+                        Country = c.String(),
+                        Phone = c.String(),
+                        Email = c.String(),
+                        Total = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        OrderDate = c.DateTime(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new
@@ -83,17 +153,28 @@
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.OrderDetails", "OrderId", "dbo.Orders");
+            DropForeignKey("dbo.Products", "CartId", "dbo.Carts");
+            DropForeignKey("dbo.Products", "CategoryId", "dbo.Categories");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.OrderDetails", new[] { "OrderId" });
+            DropIndex("dbo.Products", new[] { "CartId" });
+            DropIndex("dbo.Products", new[] { "CategoryId" });
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.Orders");
+            DropTable("dbo.OrderDetails");
+            DropTable("dbo.Categories");
+            DropTable("dbo.Products");
+            DropTable("dbo.Carts");
         }
     }
 }

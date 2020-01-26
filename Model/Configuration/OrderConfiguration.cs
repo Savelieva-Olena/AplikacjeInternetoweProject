@@ -12,7 +12,9 @@ namespace Model.Configuration
     {
         public OrderConfiguration()
         {
-            Property(x => x.OrderId).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+            Property(x => x.Id).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+
+            HasMany(x => x.OrderDetails).WithRequired(x => x.Order).HasForeignKey(x => x.OrderId);
         }
     }
 }

@@ -7,13 +7,13 @@ namespace Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class RoleTable : IMigrationMetadata
+    public sealed partial class OneToIne : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RoleTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(OneToIne));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001241455183_RoleTable"; }
+            get { return "202001261603376_OneToIne"; }
         }
         
         string IMigrationMetadata.Source

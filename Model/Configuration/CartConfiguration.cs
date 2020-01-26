@@ -12,10 +12,9 @@ namespace Model.Configuration
     {
         public CartConfiguration()
         {
-            Property(x => x.RecordId).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+            Property(x => x.Id).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
-
-            HasMany(x => x.Products).WithRequired(x => x.Cart).HasForeignKey(x => x.Id);
+            HasMany(x => x.Products).WithRequired(x => x.Cart).HasForeignKey(x => x.CartId);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Model.Entities
     public class Order
     {
 
-        public int OrderId { get; set; }
+        public int Id { get; set; }
         public string Username { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

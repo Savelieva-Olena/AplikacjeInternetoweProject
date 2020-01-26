@@ -7,13 +7,13 @@ namespace Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class PhotoAddMigration : IMigrationMetadata
+    public sealed partial class OneToOne3 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(PhotoAddMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(OneToOne3));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001252018490_PhotoAddMigration"; }
+            get { return "202001261626589_OneToOne3"; }
         }
         
         string IMigrationMetadata.Source

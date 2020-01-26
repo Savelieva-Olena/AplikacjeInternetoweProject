@@ -12,8 +12,10 @@ namespace Model.Configuration
     {
         public OrderDetailConfiguration()
         {
-            Property(x => x.OrderDetailId).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
+            Property(x => x.Id).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
 
+
+            //HasOptional(x => x.Product).WithRequired(x => x.OrderDetail);
         }
 
     }

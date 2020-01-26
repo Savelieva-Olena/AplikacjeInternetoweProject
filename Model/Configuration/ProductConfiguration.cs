@@ -16,7 +16,8 @@ namespace Model.Configuration
             Property(x => x.Name).HasMaxLength(50);
             //Property(x => x.Description).HasMaxLength(50);
             //Property(x => x.PhotoPath).HasMaxLength(50);
-
+           // HasKey(x => x.OrderDetailId);
+          
         }
     }
 }
