@@ -59,9 +59,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
+    <Compile Include="Configuration\CartConfiguration.cs" />
     <Compile Include="Configuration\CategoryConfiguration.cs" />
+    <Compile Include="Configuration\OrderConfiguration.cs" />
+    <Compile Include="Configuration\OrderDetailConfiguration.cs" />
     <Compile Include="Configuration\ProductConfiguration.cs" />
+    <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderDetail.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Migrations\202001241303051_InitialMgrtion.cs" />

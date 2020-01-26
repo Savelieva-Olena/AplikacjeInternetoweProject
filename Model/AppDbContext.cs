@@ -16,6 +16,10 @@ namespace Model
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<Cart> Carts { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+
         public static AppDbContext Create()
         {
             return new AppDbContext();
@@ -31,6 +35,9 @@ namespace Model
         {
             modelBuilder.Configurations.Add(new ProductConfiguration());
             modelBuilder.Configurations.Add(new CategoryConfiguration());
+            modelBuilder.Configurations.Add(new CartConfiguration());
+            modelBuilder.Configurations.Add(new OrderConfiguration());
+            modelBuilder.Configurations.Add(new OrderDetailConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }
