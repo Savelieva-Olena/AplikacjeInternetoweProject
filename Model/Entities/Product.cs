@@ -29,6 +29,6 @@ namespace Model.Entities
 
         //[Key, ForeignKey("OrderDetail")]
         //public int OrderDetailId { get; set; }
-        public virtual OrderDetail OrderDetailref { get; set; }
+       // public virtual OrderDetail OrderDetailref { get; set; }
     }
 }

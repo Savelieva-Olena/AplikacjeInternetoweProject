@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Test1 : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
@@ -48,12 +48,12 @@
                 "dbo.OrderDetails",
                 c => new
                     {
-                        OrderDetailID = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false, identity: true),
                         Quantity = c.Int(nullable: false),
                         UnitPrice = c.Decimal(nullable: false, precision: 18, scale: 2),
                         OrderId = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.OrderDetailID)
+                .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Orders", t => t.OrderId, cascadeDelete: true)
                 .Index(t => t.OrderId);
             

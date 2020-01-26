@@ -70,17 +70,9 @@
     <Compile Include="Entities\OrderDetail.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
-    <Compile Include="Migrations\202001261559428_Test1.cs" />
-    <Compile Include="Migrations\202001261559428_Test1.designer.cs">
-      <DependentUpon>202001261559428_Test1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001261603376_OneToIne.cs" />
-    <Compile Include="Migrations\202001261603376_OneToIne.designer.cs">
-      <DependentUpon>202001261603376_OneToIne.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202001261626589_OneToOne3.cs" />
-    <Compile Include="Migrations\202001261626589_OneToOne3.designer.cs">
-      <DependentUpon>202001261626589_OneToOne3.cs</DependentUpon>
+    <Compile Include="Migrations\202001261742283_InitialMigration.cs" />
+    <Compile Include="Migrations\202001261742283_InitialMigration.designer.cs">
+      <DependentUpon>202001261742283_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,14 +82,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001261559428_Test1.resx">
-      <DependentUpon>202001261559428_Test1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001261603376_OneToIne.resx">
-      <DependentUpon>202001261603376_OneToIne.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202001261626589_OneToOne3.resx">
-      <DependentUpon>202001261626589_OneToOne3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001261742283_InitialMigration.resx">
+      <DependentUpon>202001261742283_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
