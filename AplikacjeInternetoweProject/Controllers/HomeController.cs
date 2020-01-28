@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace AplikacjeInternetoweProject.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         private AppDbContext db = new AppDbContext();

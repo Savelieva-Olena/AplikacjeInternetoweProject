@@ -57,14 +57,14 @@ namespace AplikacjeInternetoweProject
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "2229596240680221",
+               appSecret: "4faab55f3f4cff4f1ce0bfdbad1f8a64");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "468860459592-hjjfmfj9qjn64lr34hjt196os9a2gu7n.apps.googleusercontent.com",
+            //    ClientSecret = "sOnvSs4OlW9qZpt1nJfW0eVy"
             //});
         }
 
