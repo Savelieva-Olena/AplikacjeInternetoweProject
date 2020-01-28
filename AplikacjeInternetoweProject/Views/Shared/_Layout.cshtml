@@ -9,6 +9,7 @@
 
     
     <link href="../css/scrolling-nav.css" rel="stylesheet">
+    <link href="../css/corector.css" rel="stylesheet">
 
 </head>
 @using Microsoft.AspNet.Identity
@@ -21,7 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Worm Store", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -52,12 +53,16 @@
 
     <div class="container body-content" style="width: 100%; padding: 0%;">
         @RenderBody()
-        <hr />
-        <footer class="py-5 bg-dark">
-            <div class="container">
-                <p class="m-0 text-center text-white">Copyright &copy; Worm Store 2019</p>
+        
+        <footer class="page-footer font-small bg-light">
+            <hr />
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3 bg-dark" style="position:sticky; padding-bottom: 3%; padding-top:1%; font-size: 24px;">
+                © 2020 Copyright:
+                <a href="https://mdbootstrap.com/education/bootstrap/"> wormStore@gmail.com</a>
             </div>
-            <!-- /.container -->
+            <!-- Copyright -->
+
         </footer>
     </div>
 
