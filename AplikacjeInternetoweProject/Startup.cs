@@ -41,6 +41,8 @@ namespace AplikacjeInternetoweProject
 
                 string userPWD = "1Admin!";
 
+                user.EmailConfirmed = true;
+
                 var chkUser = UserManager.Create(user, userPWD);
 
                 //Add default User to Role Admin  
