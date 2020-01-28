@@ -14,10 +14,11 @@ namespace Model.Configuration
         {
             Property(x => x.Id).HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity);
             Property(x => x.Name).HasMaxLength(50);
+            HasMany(x => x.OrderDetails).WithRequired(x => x.Product).HasForeignKey(x => x.ProductId);
             //Property(x => x.Description).HasMaxLength(50);
             //Property(x => x.PhotoPath).HasMaxLength(50);
-           // HasKey(x => x.OrderDetailId);
-          
+            // HasKey(x => x.OrderDetailId);
+
         }
     }
 }

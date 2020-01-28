@@ -60,9 +60,13 @@
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
     <Compile Include="Configuration\CategoryConfiguration.cs" />
+    <Compile Include="Configuration\OrderConfiguration.cs" />
+    <Compile Include="Configuration\OrderDetailConfiguration.cs" />
     <Compile Include="Configuration\ProductConfiguration.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Order.cs" />
+    <Compile Include="Entities\OrderDetail.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
     <Compile Include="Migrations\202001271940001_CartItem.cs" />
@@ -72,6 +76,10 @@
     <Compile Include="Migrations\202001281126110_ShoppingCart.cs" />
     <Compile Include="Migrations\202001281126110_ShoppingCart.designer.cs">
       <DependentUpon>202001281126110_ShoppingCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001281356292_addOrder.cs" />
+    <Compile Include="Migrations\202001281356292_addOrder.designer.cs">
+      <DependentUpon>202001281356292_addOrder.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202001281126110_ShoppingCart.resx">
       <DependentUpon>202001281126110_ShoppingCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001281356292_addOrder.resx">
+      <DependentUpon>202001281356292_addOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
