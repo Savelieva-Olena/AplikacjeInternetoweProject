@@ -199,6 +199,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\contact.png" />
+    <Content Include="img\tree.jpg" />
+    <Content Include="img\weapon.jpg" />
+    <Content Include="img\worm.jpg" />
     <Content Include="js\gulpfile.js" />
     <Content Include="js\scrolling-nav.js" />
     <Content Include="Scripts\bootstrap.js" />
