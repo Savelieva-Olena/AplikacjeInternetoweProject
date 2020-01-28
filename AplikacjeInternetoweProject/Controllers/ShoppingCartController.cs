@@ -68,5 +68,15 @@ namespace AplikacjeInternetoweProject.Controllers
             lsCart.RemoveAt(check);
             return View("Index");
         }
+        public ActionResult UpdateCart(FormCollection fc)
+        {
+            string[] quantity =fc.GetValues("quantity");
+            List<Cart> lsCart = (List<Cart>)Session["Cart"];
+            for (int i = 0; i < lsCart.Count; i++)
+            {
+                lsCart[i].Quantity = Convert.ToInt32(quantity[i]);
+            }
+            return View("Index");
+        }
     }
 }
