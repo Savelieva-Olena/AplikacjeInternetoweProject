@@ -9,11 +9,12 @@ using System.Web.Mvc;
 
 namespace AplikacjeInternetoweProject.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         private AppDbContext db = new AppDbContext();
-        public async Task<ActionResult> Index() 
-        { 
+        public async Task<ActionResult> Index()
+        {
             var products = db.Products.Include(p => p.Category);
             return View(await products.ToListAsync());
         }
