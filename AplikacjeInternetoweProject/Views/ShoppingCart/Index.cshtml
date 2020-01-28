@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 @{ if (Session["Cart"] != null)
     {
 
@@ -59,7 +60,15 @@
     }
     else
     {
-        <h4>No items in your Shopping Cart</h4>
+        <section style="padding: 5%;">
+            <div class="alert alert-danger" style="margin-bottom: 0; width: 50%; margin-left:auto; margin-right: auto;">
+                <center style="font-size:30px; padding: 5%;">
+                    <strong>Information: </strong> No items in your Shopping Cart
+                </center>
+            </div>
+        </section>
+        
+        <section class="image" style="background-image: url('../img/white.jpg');"></section>
     }
 
 }
