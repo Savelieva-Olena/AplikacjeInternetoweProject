@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -8,9 +11,11 @@ namespace AplikacjeInternetoweProject.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
-            return View();
+        private AppDbContext db = new AppDbContext();
+        public async Task<ActionResult> Index() 
+        { 
+            var products = db.Products.Include(p => p.Category);
+            return View(await products.ToListAsync());
         }
 
         public ActionResult About()

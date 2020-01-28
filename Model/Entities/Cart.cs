@@ -8,15 +8,13 @@ namespace Model.Entities
 {
     public class Cart
     {
-       // public int RecordId { get; set; }
+        public Product Product { get; set; }
+        public int Quantity { get; set; }
 
-        public int Id { get; set; }
-
-        public int Count { get; set; }
-
-        public System.DateTime DateCreated { get; set; }
-
-        public virtual ICollection<Product> Products { get; set; }
-
+        public Cart(Product product,int quantity)
+        {
+            Product = product;
+            Quantity = quantity;
+        }
     }
 }

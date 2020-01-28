@@ -7,13 +7,13 @@ namespace Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class InitialMigration : IMigrationMetadata
+    public sealed partial class ShoppingCart : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialMigration));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ShoppingCart));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001261742283_InitialMigration"; }
+            get { return "202001281126110_ShoppingCart"; }
         }
         
         string IMigrationMetadata.Source

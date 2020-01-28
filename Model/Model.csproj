@@ -59,20 +59,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDbContext.cs" />
-    <Compile Include="Configuration\CartConfiguration.cs" />
     <Compile Include="Configuration\CategoryConfiguration.cs" />
-    <Compile Include="Configuration\OrderConfiguration.cs" />
-    <Compile Include="Configuration\OrderDetailConfiguration.cs" />
     <Compile Include="Configuration\ProductConfiguration.cs" />
     <Compile Include="Entities\Cart.cs" />
     <Compile Include="Entities\Category.cs" />
-    <Compile Include="Entities\Order.cs" />
-    <Compile Include="Entities\OrderDetail.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
-    <Compile Include="Migrations\202001261742283_InitialMigration.cs" />
-    <Compile Include="Migrations\202001261742283_InitialMigration.designer.cs">
-      <DependentUpon>202001261742283_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202001271940001_CartItem.cs" />
+    <Compile Include="Migrations\202001271940001_CartItem.designer.cs">
+      <DependentUpon>202001271940001_CartItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001281126110_ShoppingCart.cs" />
+    <Compile Include="Migrations\202001281126110_ShoppingCart.designer.cs">
+      <DependentUpon>202001281126110_ShoppingCart.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -82,8 +81,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001261742283_InitialMigration.resx">
-      <DependentUpon>202001261742283_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001271940001_CartItem.resx">
+      <DependentUpon>202001271940001_CartItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001281126110_ShoppingCart.resx">
+      <DependentUpon>202001281126110_ShoppingCart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

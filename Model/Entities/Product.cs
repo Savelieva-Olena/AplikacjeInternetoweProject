@@ -23,12 +23,5 @@ namespace Model.Entities
 
         public int CategoryId { get; set; }
         public virtual Category Category { get; set; }
-
-        public int CartId { get; set; }
-        public virtual Cart Cart { get; set; }
-
-        //[Key, ForeignKey("OrderDetail")]
-        //public int OrderDetailId { get; set; }
-       // public virtual OrderDetail OrderDetailref { get; set; }
     }
 }
