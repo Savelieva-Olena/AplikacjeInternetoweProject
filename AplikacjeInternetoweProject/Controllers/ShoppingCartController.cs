@@ -82,8 +82,36 @@ namespace AplikacjeInternetoweProject.Controllers
         {
             return View();
         }
-        public ActionResult ProcessOrder(FormCollection ch)
+        public ActionResult ProcessOrder(FormCollection fcol)
         {
+            List<Cart> lsCart = (List<Cart>)Session["Cart"];
+
+            Order order = new Order()
+            {
+                CustomerName = fcol["cusName"],
+                CustomerAddress = fcol["cusPhone"],
+                CustomerEmail = fcol["cusEmail"],
+                CustomerPhone = fcol["cusAddress"],
+                OrderDate=DateTime.Now,
+                PaymentType="Cash",
+                Status="prossesing"
+            };
+            db.Orders.Add(order);
+            db.SaveChanges();
+            foreach(var cart in lsCart)
+            {
+                OrderDetail orderDetail = new OrderDetail()
+                {
+                    OrderId = order.OrderId,
+                    ProductId = cart.Product.Id,
+                    Quantity = cart.Quantity,
+                    Price = cart.Product.Price
+                };
+                db.OrderDetails.Add(orderDetail);
+                db.SaveChanges();
+            }
+            //Clean Session 
+            Session.Remove("Cart");
             return View("OrderSuccess");
         }
     }
