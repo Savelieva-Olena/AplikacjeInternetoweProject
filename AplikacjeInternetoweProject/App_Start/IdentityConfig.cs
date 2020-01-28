@@ -62,7 +62,7 @@ namespace AplikacjeInternetoweProject
             oMail.From = (ConfigurationManager.AppSettings["Email"].ToString() + "@mail.ru");
             oMail.To = message.Destination;
 
-            oMail.Subject = "Confirmation";
+            oMail.Subject = "WormsShop Robo";
             oMail.TextBody = message.Body;
 
 
