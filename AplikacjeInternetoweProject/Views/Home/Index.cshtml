@@ -25,29 +25,53 @@
     </div>
 </header>
 
-
-<section id="about" class="about-section text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mx-auto">
-                <h2 class="text-white mb-4">Built with Bootstrap 4</h2>
-                <p class="text-white-50">
-                    Grayscale is a free Bootstrap theme created by Start Bootstrap. It can be yours right now, simply download the template on
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.
-                </p>
+    <div id="productElement">
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <div class="main-content Search">
+                <div class="content-image">
+                    <a href="#"><img src="@Url.Content(item.PhotoPath)" width="150" height="150" /></a>
+                </div>
+                <div class="content-title">
+                    <a href="#">@item.Name</a>
+                </div>
+                <div class="content-title">
+                    <a href="#">@item.Price</a>
+                </div>
+                <div class="content-title">
+                    @Html.ActionLink("Add to cart", "OrderNow", "ShoppingCart", new { id = item.Id }, null)
+                </div>
             </div>
-        </div>
-        <img src="img/ipad.png" class="img-fluid" alt="">
-    </div>
-</section>
+        }
+    }
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+    function Contains(text_one, text_two) {
+        if (text_one.indexOf(text_two) != -1)
+            return true;
+    }
+    $("#Search").keyup(function () {
+        var searchText = $("#Search").val().toLowerCase();
+        $(".Search").each(function () {
+            if (!Contains($(this).text().toLowerCase(), searchText)) {
+                $(this).hide();
+            }
+            else {
+                $(this).show();
+            }
+        });
+    });
+});
+</script>
+    
+}
 
 
-<section id="about">
-    <div class="bg-cover">
-        <img src="../img/worm.jpg" class="img-fluid" alt="Responsive image">
-    </div>
-</section>
--->
 @{
     foreach (var item in Model)
     {

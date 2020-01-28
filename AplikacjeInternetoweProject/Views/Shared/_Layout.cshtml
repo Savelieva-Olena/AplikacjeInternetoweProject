@@ -41,9 +41,10 @@
                             </div>
                         </li>
                     }
-                    <li>@Html.ActionLink("Cart", "Index", "ShoppingCart")</li>
 
+                    <li>@Html.ActionLink("Cart", "Index", "ShoppingCart")</li>
                 </ul>
+                <input type="text" id="Search" placeholder="Enter product..." />
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
@@ -75,8 +76,11 @@
 
     <!-- Custom JavaScript for this theme -->
     <script src="../js/scrolling-nav.js"></script>
+    <script src="../js/SiteScript.js" type="text/javascript"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    
 </body>
 </html>
