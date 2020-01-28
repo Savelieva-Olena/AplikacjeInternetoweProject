@@ -16,23 +16,48 @@
 
 
 
-
-@{
-    foreach (var item in Model)
+<div id="productElement">
+    @if (Model != null)
     {
-        <div class="main-content">
-            <div class="content-image">
-                <a href="#"><img src="@Url.Content(item.PhotoPath)" width="150" height="150" /></a>
+        foreach (var item in Model)
+        {
+            <div class="main-content Search">
+                <div class="content-image">
+                    <a href="#"><img src="@Url.Content(item.PhotoPath)" width="150" height="150" /></a>
+                </div>
+                <div class="content-title">
+                    <a href="#">@item.Name</a>
+                </div>
+                <div class="content-title">
+                    <a href="#">@item.Price</a>
+                </div>
+                <div class="content-title">
+                    @Html.ActionLink("Add to cart", "OrderNow", "ShoppingCart", new { id = item.Id }, null)
+                </div>
             </div>
-            <div class="content-title">
-                <a href="#">@item.Name</a>
-            </div>
-            <div class="content-title">
-                <a href="#">@item.Price</a>
-            </div>
-            <div class="content-title">
-                @Html.ActionLink("Add to cart", "OrderNow", "ShoppingCart", new { id = item.Id }, null)
-            </div>
-        </div>
+        }
     }
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+    function Contains(text_one, text_two) {
+        if (text_one.indexOf(text_two) != -1)
+            return true;
+    }
+    $("#Search").keyup(function () {
+        var searchText = $("#Search").val().toLowerCase();
+        $(".Search").each(function () {
+            if (!Contains($(this).text().toLowerCase(), searchText)) {
+                $(this).hide();
+            }
+            else {
+                $(this).show();
+            }
+        });
+    });
+});
+</script>
+    
 }

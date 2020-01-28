@@ -1,4 +1,5 @@
 ﻿using Model;
+using Model.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -32,5 +33,11 @@ namespace AplikacjeInternetoweProject.Controllers
 
             return View();
         }
+
+        //public ActionResult GetSearchRecord(string SearchText)
+        //{
+        //    var list = db.Products.Where(x => x.Name.Contains(SearchText) || x.Category.Name.Contains(SearchText)).Select(x => new Product { Name = x.Name, Category = x.Category, PhotoPath = x.PhotoPath, Price = x.Price });
+        //    return PartialView("_TextSearchPartial", list);
+        //}
     }
 }

@@ -1,0 +1,28 @@
+﻿@*@model IEnumerable<Model.Entities.Product>
+
+@{
+    ViewBag.Title = "_TextSearchPartial";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        <div class="main-content itemsearch">
+            <div class="content-image">
+                <a href="#"><img src="@Url.Content(item.PhotoPath)" width="150" height="150" /></a>
+            </div>
+            <div class="content-title">
+                <a href="#">@item.Name</a>
+            </div>
+            <div class="content-title">
+                <a href="#">@item.Price</a>
+            </div>
+            <div class="content-title">
+                @Html.ActionLink("Add to cart", "OrderNow", "ShoppingCart", new { id = item.Id }, null)
+            </div>
+        </div>
+    }
+}*@
