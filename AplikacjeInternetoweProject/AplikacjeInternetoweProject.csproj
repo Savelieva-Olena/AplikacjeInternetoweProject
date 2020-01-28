@@ -202,6 +202,7 @@
     <Content Include="img\contact.png" />
     <Content Include="img\tree.jpg" />
     <Content Include="img\weapon.jpg" />
+    <Content Include="img\white.jpg" />
     <Content Include="img\worm.jpg" />
     <Content Include="js\gulpfile.js" />
     <Content Include="js\scrolling-nav.js" />
