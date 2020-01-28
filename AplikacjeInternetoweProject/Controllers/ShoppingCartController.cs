@@ -78,5 +78,13 @@ namespace AplikacjeInternetoweProject.Controllers
             }
             return View("Index");
         }
+        public ActionResult CheckOut(FormCollection ch)
+        {
+            return View();
+        }
+        public ActionResult ProcessOrder(FormCollection ch)
+        {
+            return View("OrderSuccess");
+        }
     }
 }
