@@ -100,6 +100,7 @@ namespace AplikacjeInternetoweProject.Controllers
         {
             return View();
         }
+        [Authorize]
         public ActionResult ProcessOrder(FormCollection fcol)
         {
             List<Cart> lsCart = (List<Cart>)Session["Cart"];
