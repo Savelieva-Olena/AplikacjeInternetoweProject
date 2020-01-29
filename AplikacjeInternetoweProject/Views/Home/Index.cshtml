@@ -14,8 +14,8 @@
 
 <section class="image" style="background-image: url('../img/worm.jpg');"></section>  
 
-<!--
-<header class="masthead">
+
+@*<header class="masthead">
     <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
             <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
@@ -23,7 +23,7 @@
             <a href="#about" class="btn btn-primary js-scroll-trigger">Get Started</a>
         </div>
     </div>
-</header>
+</header>*@
 
     <div id="productElement">
     @if (Model != null)
@@ -69,25 +69,4 @@
 });
 </script>
     
-}
-
-
-@{
-    foreach (var item in Model)
-    {
-        <div class="main-content">
-            <div class="content-image">
-                <a href="#"><img src="@Url.Content(item.PhotoPath)" width="150" height="150" /></a>
-            </div>
-            <div class="content-title">
-                <a href="#">@item.Name</a>
-            </div>
-            <div class="content-title">
-                <a href="#">@item.Price</a>
-            </div>
-            <div class="content-title">
-                @Html.ActionLink("Add to cart", "OrderNow", "ShoppingCart", new { id = item.Id }, null)
-            </div>
-        </div>
-    }
 }

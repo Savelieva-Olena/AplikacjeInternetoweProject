@@ -35,6 +35,7 @@ namespace Model
             modelBuilder.Configurations.Add(new CategoryConfiguration());
             modelBuilder.Configurations.Add(new OrderConfiguration());
             modelBuilder.Configurations.Add(new OrderDetailConfiguration());
+           // modelBuilder.Configurations.Add(new ApplicationUserConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }

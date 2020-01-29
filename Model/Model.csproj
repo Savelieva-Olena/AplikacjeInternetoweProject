@@ -85,9 +85,17 @@
     <Compile Include="Entities\OrderDetail.cs" />
     <Compile Include="Entities\Product.cs" />
     <Compile Include="Identity\ApplicationUser.cs" />
-    <Compile Include="Migrations\202001281515438_worm.cs" />
-    <Compile Include="Migrations\202001281515438_worm.designer.cs">
-      <DependentUpon>202001281515438_worm.cs</DependentUpon>
+    <Compile Include="Migrations\202001291102091_InitialMigratio3.cs" />
+    <Compile Include="Migrations\202001291102091_InitialMigratio3.designer.cs">
+      <DependentUpon>202001291102091_InitialMigratio3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001291109079_addOrderToUser.cs" />
+    <Compile Include="Migrations\202001291109079_addOrderToUser.designer.cs">
+      <DependentUpon>202001291109079_addOrderToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202001291243251_ToString.cs" />
+    <Compile Include="Migrations\202001291243251_ToString.designer.cs">
+      <DependentUpon>202001291243251_ToString.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,8 +105,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202001281515438_worm.resx">
-      <DependentUpon>202001281515438_worm.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202001291102091_InitialMigratio3.resx">
+      <DependentUpon>202001291102091_InitialMigratio3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001291109079_addOrderToUser.resx">
+      <DependentUpon>202001291109079_addOrderToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001291243251_ToString.resx">
+      <DependentUpon>202001291243251_ToString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

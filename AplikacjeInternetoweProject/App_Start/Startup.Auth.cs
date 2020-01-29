@@ -58,8 +58,8 @@ namespace AplikacjeInternetoweProject
             //   consumerSecret: "");
 
             app.UseFacebookAuthentication(
-               appId: "2229596240680221",
-               appSecret: "4faab55f3f4cff4f1ce0bfdbad1f8a64");
+               appId: "1305379806321836",
+               appSecret: "525176937df9a8e982710caf055134dc");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{

@@ -7,13 +7,13 @@ namespace Model.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.0")]
-    public sealed partial class worm : IMigrationMetadata
+    public sealed partial class ToString : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(worm));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ToString));
         
         string IMigrationMetadata.Id
         {
-            get { return "202001281515438_worm"; }
+            get { return "202001291243251_ToString"; }
         }
         
         string IMigrationMetadata.Source

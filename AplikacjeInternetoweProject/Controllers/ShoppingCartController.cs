@@ -1,10 +1,12 @@
-﻿using Model;
+﻿
+using Microsoft.AspNet.Identity;
+using Model;
 using Model.Entities;
+using Model.Identity;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Web;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace AplikacjeInternetoweProject.Controllers
@@ -17,6 +19,7 @@ namespace AplikacjeInternetoweProject.Controllers
         {
             return View();
         }
+
         public ActionResult OrderNow(int? id)
         {
             if (id == null)
@@ -68,7 +71,7 @@ namespace AplikacjeInternetoweProject.Controllers
             lsCart.RemoveAt(check);
             return View("Index");
         }
-        public ActionResult UpdateCart(FormCollection fc)
+        public ActionResult UpdateCart(System.Web.Mvc.FormCollection fc)
         {
             string[] quantity =fc.GetValues("quantity");
             List<Cart> lsCart = (List<Cart>)Session["Cart"];
@@ -86,16 +89,23 @@ namespace AplikacjeInternetoweProject.Controllers
         {
             List<Cart> lsCart = (List<Cart>)Session["Cart"];
 
+            var userId=User.Identity.GetUserId();
             Order order = new Order()
             {
                 CustomerName = fcol["cusName"],
                 CustomerAddress = fcol["cusPhone"],
                 CustomerEmail = fcol["cusEmail"],
                 CustomerPhone = fcol["cusAddress"],
-                OrderDate=DateTime.Now,
-                PaymentType="Cash",
-                Status="prossesing"
+                OrderDate = DateTime.Now,
+                PaymentType = "Cash",
+                Status = "prossesing"
             };
+            if (userId != null)
+            {
+                order.ApplicationUserId = userId;
+            }
+
+
             db.Orders.Add(order);
             db.SaveChanges();
             foreach(var cart in lsCart)
