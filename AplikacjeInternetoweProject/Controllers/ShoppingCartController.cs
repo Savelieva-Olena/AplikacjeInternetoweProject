@@ -3,8 +3,11 @@ using Microsoft.AspNet.Identity;
 using Model;
 using Model.Entities;
 using Model.Identity;
+using Repository.Abstract;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Mvc;
@@ -14,12 +17,24 @@ namespace AplikacjeInternetoweProject.Controllers
     public class ShoppingCartController : Controller
     {
         AppDbContext db = new AppDbContext();
+        private readonly IOrderRepository orderRepository;
+        public ShoppingCartController(IOrderRepository orderRepository)
+        {
+            this.orderRepository = orderRepository;
+
+        }
+        public ShoppingCartController() { }
         // GET: ShoppingCart
         public ActionResult Index()
         {
             return View();
         }
-
+        private void getOrder()
+        {
+            var order = db.Orders;
+            var selectOrder = order.Where(x => x.ApplicationUserId == User.Identity.GetUserId());
+            ViewBag.orderModel = selectOrder;   
+        }
         public ActionResult OrderNow(int? id)
         {
             if (id == null)

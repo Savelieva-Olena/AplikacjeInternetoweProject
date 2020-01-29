@@ -105,9 +105,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ICategoryRepository.cs" />
+    <Compile Include="Abstract\IOrderDatailRepository.cs" />
+    <Compile Include="Abstract\IOrderRepository.cs" />
     <Compile Include="Abstract\IProductRepository.cs" />
     <Compile Include="Concrete\BaseRepository.cs" />
     <Compile Include="Concrete\CategoryRepository.cs" />
+    <Compile Include="Concrete\OrderDetailRepository.cs" />
+    <Compile Include="Concrete\OrderRepository.cs" />
     <Compile Include="Concrete\ProductRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
